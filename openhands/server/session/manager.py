@@ -242,10 +242,7 @@ class SessionManager:
             if self._get_redis_client():
                 # Debug info for HA envs
                 logger.info(
-                    f'Running agent loops: {len(self._local_agent_loops_by_sid)}'
-                )
-                logger.info(
-                    f'Local connections: {len(self._local_connection_id_to_session_id)}'
+                    f'agent_loops: {len(self._local_agent_loops_by_sid)}; local_connections: {len(self._local_connection_id_to_session_id)}'
                 )
             try:
                 close_threshold = time.time() - self.config.sandbox.close_delay
